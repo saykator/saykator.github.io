@@ -1,11 +1,12 @@
-import { faFlask } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Content from "./Content"
+import Experience from "./Experience"
 
 const App = () => {
   return (
-    <>
-      <FontAwesomeIcon icon={faFlask} /> Work in progress
-    </>
+    <div className="flex justify-between h-screen">
+      <Content />
+      <Experience />
+    </div>
   )
 }
 
