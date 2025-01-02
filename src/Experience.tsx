@@ -1,7 +1,7 @@
 export default function Experience() {
   return (
-    <div className="p-10">
-      <p>No 3D Experience Yet.</p>
+    <div className="absolute right-10 top-1/2 bottom-1/2">
+      3D Experience
     </div>
   )
 }

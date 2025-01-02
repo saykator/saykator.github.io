@@ -3,7 +3,7 @@ import Experience from "./Experience"
 
 const App = () => {
   return (
-    <div className="flex justify-between h-screen">
+    <div className="flex h-screen">
       <Content />
       <Experience />
     </div>
