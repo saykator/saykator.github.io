@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {},
     fontFamily: {
-      'sans': ['Fredoka', 'serif'],
-      'mali': ['Mali', 'serif']
+      'sans': ['Fredoka'],
+      'mali': ['Mali']
     },
   },
   plugins: [],
