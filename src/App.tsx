@@ -5,7 +5,8 @@ import GlowBall from "./components/Glowball"
 import AutoBabftDownloadButton from "./components/AutoBabftDownloadButton"
 
 const subLink = 'https://www.youtube.com/@saykator?sub_confirmation=1'
-const repoLink = 'https://github.com/saykator/autobabft'
+const repoLink = 'https://github.com/saykator/saykator.github.io'
+
 export default function App() {
   return (
     <div className="flex flex-col items-center p-20 gap-5 h-screen justify-center opacity-95">

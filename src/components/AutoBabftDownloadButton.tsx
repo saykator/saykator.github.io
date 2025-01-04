@@ -4,12 +4,18 @@ import Button from "./Button"
 
 const GITHUB_REPO = "saykator/autobabft"
 const FILE_NAME = "autobabft.exe"
+const TOLERANCE_DELAY = 500
 
 export default function AutoBabftDownload() {
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null)
   const [loading, setLoading] = useState<boolean>(true)
+  const [delayPassed, setDelayPassed] = useState<boolean>(false)
 
   useEffect(() => {
+    const delayTimeout = setTimeout(() => {
+      setDelayPassed(true)
+    }, TOLERANCE_DELAY)
+
     const fetchLatestRelease = async () => {
       try {
         const response = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/releases/latest`)
@@ -33,27 +39,25 @@ export default function AutoBabftDownload() {
     }
 
     fetchLatestRelease()
+    return () => clearTimeout(delayTimeout)
   }, [])
-
-
 
   return (
     <>
-      {loading ?
+      {loading && delayPassed ? (
         <Button disabled className="bg-zinc-800">
           Getting ready...
         </Button>
-        :
-        downloadUrl ?
-          <Button
-            onClick={() => { window.location.href = downloadUrl }}
-            className="bg-zinc-800"
-          >
-            <ArrowDownToLine size={16} /> AutoBabft Autoclicker!
-          </Button>
-          :
-          <Button>Something went wrong :/</Button>
-      }
+      ) : (downloadUrl || !delayPassed) ? (
+        <Button
+          onClick={() => { window.location.href = downloadUrl || '' }}
+          className="bg-zinc-800"
+        >
+          <ArrowDownToLine size={16} /> AutoBabft Autoclicker!
+        </Button>
+      ) : (
+        <Button>Something went wrong :/</Button>
+      )}
     </>
   )
 }
