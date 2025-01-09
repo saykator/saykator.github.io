@@ -14,7 +14,7 @@ export default function App() {
         <img src="/saykator.svg" alt="Saykator Logo" className="mr-2" />
         <h1 className="font-mali uppercase text-4xl">saykator</h1>
       </div>
-      <h2 className="text-xl">The Insanest BABFT Youtuber!</h2>
+      <h2 className="text-xl">Coolest Youtuber!</h2>
       <img src="/trophies.png" className="h-56 self-center" />
       <Button
         onClick={() => { window.open(subLink) }}
